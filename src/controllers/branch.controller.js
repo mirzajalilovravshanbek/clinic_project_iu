@@ -56,7 +56,7 @@ class ModelController {
             throw new HttpException(404, 'not found');
         }
         res.send(Order);
-        client.setex('branch_doctor', 30000000, JSON.stringify(Order));
+        // client.setex('branch_doctor', 30000000, JSON.stringify(Order));
     };
     getByInspection = async (req, res, next) => {
         const Order = await ModelModel.findAll({
@@ -69,7 +69,7 @@ class ModelController {
             throw new HttpException(404, 'not found');
         }
         res.send(Order);
-        client.setex('branch_inspection', 30000000, JSON.stringify(Order));
+        // client.setex('branch_inspection', 30000000, JSON.stringify(Order));
     };
     create = async (req, res, next) => {
         this.checkValidation(req);        
